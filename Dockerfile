@@ -5,5 +5,6 @@ RUN sed -i 's/BASH + " -l"/"ssh -t REMOTE_IP_ADDR \\"clear;$SHELL\\""/' /usr/src
 ADD init.sh /init.sh
 
 ENV SSH_USER root
+VOLUME /root/.ssh/authorized_keys
 
 CMD bash /init.sh
