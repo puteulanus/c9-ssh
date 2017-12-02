@@ -5,7 +5,7 @@ if [ ! -f "/root/.ssh/id_rsa.pub" ];then
   ssh-keygen -t rsa -b 4096 -C "c9ssh@delete.later" -N '' -f /root/.ssh/id_rsa -q
   cat /root/.ssh/id_rsa.pub >> /root/.ssh/authorized_keys
   REMOTE_IP=${SSH_IP:-$(route -n | awk '/UG[ \t]/{print $2}')}
-  ssh -o StrictHostKeyChecking=no ${SSH_USER:-root}@$REMOTE_IP echo
+  ssh -o StrictHostKeyChecking=no $SSH_USER@$REMOTE_IP echo
   sed -i "s/REMOTE_IP_ADDR/$REMOTE_IP/" /usr/src/c9sdk/node_modules/vfs-local/localfs.js
 fi
 
