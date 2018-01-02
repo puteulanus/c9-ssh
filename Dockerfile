@@ -9,6 +9,6 @@ ENV SSH_IP=
 ENV SSH_USER root
 ENV SSH_PORT 22
 ENV WORKSPACE_DIR /workspace
-VOLUME /root/.ssh/authorized_keys
+VOLUME /root/.ssh
 
 CMD bash /init.sh
