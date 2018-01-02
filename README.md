@@ -3,7 +3,7 @@ Use Cloud9 in docker as a ssh client for host
 
 Useage: 
 
-docker run -v ~/.ssh/authorized_keys:/keys -d -P -v /root:/workspace puteulanus/c9-ssh
+docker run -v ~/.ssh:/.ssh -d -P -v /root:/workspace puteulanus/c9-ssh
 
 Environment:
 
